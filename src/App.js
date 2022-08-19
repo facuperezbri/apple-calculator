@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Buttons from './components/Buttons';
+import Display from './components/Display';
+import Nav from './components/Nav';
 
-function App() {
+
+
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='flex flex-col justify-between w-[100vw] max-w-[400px] h-[100vh] text-white bg-black rounded-[30px]'>
+      <Nav />
+      <Display />
+      <Buttons />
     </div>
   );
 }
