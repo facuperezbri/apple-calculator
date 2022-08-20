@@ -3,11 +3,12 @@ import React from 'react'
 import Button from './Button'
 import buttons from '../constants'
 
-const Buttons = () => {
+const Buttons = ({ value }) => {
   return (
-    <div className='grid grid-rows-5 grid-cols-4 px-[16px] pb-10 gap-[10px]'>
+    <div className='grid grid-rows-5 place-content-center place-items-center grid-cols-4 px-[16px] pb-10 gap-[10px]'>
+      <Button content={value !== '0' ? 'C' : 'AC'} type='function' />
       {buttons.map((b) => (
-        <Button content={b.content} />
+        <Button content={b.content} type={b.type} />
       ))}</div>
   )
 }

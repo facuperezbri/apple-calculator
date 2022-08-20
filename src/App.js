@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Buttons from './components/Buttons';
 import Display from './components/Display';
 import Nav from './components/Nav';
@@ -5,11 +6,15 @@ import Nav from './components/Nav';
 
 
 function App () {
+  const [value, setValue] = useState('0')
+
   return (
-    <div className='flex flex-col justify-between w-[100vw] max-w-[400px] h-[100vh] text-white bg-black rounded-[30px]'>
+    <div className='flex flex-col m-auto bg-black text-white justify-between w-[100vw] max-w-[400px] h-[100vh] rounded-[30px]'>
       <Nav />
-      <Display />
-      <Buttons />
+      <div>
+        <Display value={value} />
+        <Buttons value={value} />
+      </div>
     </div>
   );
 }

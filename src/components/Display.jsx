@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Display = () => {
+const Display = ({ value }) => {
   return (
-    <div className='h-[200px]'>Display</div>
+    <div className='flex justify-end items-end text-[100px] font-extralight pr-5 h-[200px]'>{value}</div>
   )
 }
 
