@@ -10,6 +10,9 @@ function getType (type) {
       return ACTIONS.CLEAR;
     case 'operator':
       return ACTIONS.CHOOSE_OPERATION;
+    case 'evaluate': {
+      return ACTIONS.EVALUATE;
+    }
     default:
       break;
   }
@@ -17,7 +20,7 @@ function getType (type) {
 
 const Button = ({ content, type, dispatch }) => {
   return (
-    <button onClick={() => dispatch({ type: getType(type), payload: content })} className={`bg-[#333] h-[75px] w-[75px] rounded-full font-medium text-[34px]  ${content === '0' && 'flex justify-start items-center pl-7 w-[180px] col-start-1 col-span-2'} ${type === 'operator' && 'bg-[#ff9f0c] active:bg-[#fdc68d]'} ${type === 'function' && 'bg-[#a5a5a5] text-black active:bg-[#d9d9d9]'} ${type === 'clear' && 'bg-[#a5a5a5] text-black active:bg-[#d9d9d9]'} ${type === 'number' && 'active:bg-[#737373]'} `}> {content}</button >
+    <button onClick={() => dispatch({ type: getType(type), payload: content })} className={`bg-[#333] h-[75px] w-[75px] rounded-full font-medium text-[34px]  ${content === '0' && 'flex justify-start items-center pl-7 w-[180px] col-start-1 col-span-2'} ${type === 'operator' && 'bg-[#ff9f0c] active:bg-[#fdc68d]'}  ${type === 'evaluate' && 'bg-[#ff9f0c] active:bg-[#fdc68d]'} ${type === 'function' && 'bg-[#a5a5a5] text-black active:bg-[#d9d9d9]'} ${type === 'clear' && 'bg-[#a5a5a5] text-black active:bg-[#d9d9d9]'} ${type === 'number' && 'active:bg-[#737373]'} `}> {content}</button >
   )
 }
 

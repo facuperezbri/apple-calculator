@@ -19,6 +19,13 @@ export const ACTIONS = {
 function reducer (state, { type, payload }) {
   switch (type) {
     case ACTIONS.ADD_DIGIT:
+      if (state.overwrite) {
+        return {
+          ...state,
+          currentValue: payload,
+          overwrite: false
+        }
+      }
       if (payload === 0 && state.currentValue === 0) return state
       if (payload === '.' && state.currentValue.includes('.')) return state
       return {
@@ -54,12 +61,11 @@ function reducer (state, { type, payload }) {
         operation: null
       }
     case ACTIONS.EVALUATE: {
-      if (state.currentValue === 0 || state.prevValue === 0 || state.operation === null) return state
-
+      if (state.currentValue === null || state.prevValue === null || state.operation === null) return state
       return {
         ...state,
-        prevValue: 0,
         currentValue: evaluate(state),
+        overwrite: true
       }
     }
     default:

@@ -69,7 +69,7 @@ const buttons = [
   },
   {
     content: '=',
-    type: 'operator'
+    type: 'evaluate'
   },
 ]
 
