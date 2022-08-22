@@ -64,7 +64,7 @@ const buttons = [
     type: 'number'
   },
   {
-    content: ',',
+    content: '.',
     type: 'number'
   },
   {
