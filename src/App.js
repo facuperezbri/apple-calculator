@@ -9,7 +9,7 @@ function App () {
   const [value, setValue] = useState('0')
 
   return (
-    <div className='flex flex-col m-auto bg-black text-white justify-between w-[100vw] max-w-[400px] h-[100vh] rounded-[30px]'>
+    <div className='flex flex-col m-auto bg-black text-white justify-between w-[100vw] max-w-[400px] h-[100vh] max-h-[800px] rounded-[30px]'>
       <Nav />
       <div>
         <Display value={value} />
