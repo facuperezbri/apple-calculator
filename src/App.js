@@ -27,6 +27,10 @@ function reducer (state, { type, payload }) {
         }
       }
       if (payload === 0 && state.currentValue === 0) return state
+      if (state.currentValue === 0 && payload === '.') return {
+        ...state,
+        currentValue: `${0}${payload}`
+      }
       if (payload === '.' && state.currentValue.includes('.')) return state
       return {
         ...state,
